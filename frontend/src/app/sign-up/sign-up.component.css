@@ -1,0 +1,82 @@
+label{
+    font-size: 20px;
+    text-align: center;
+}
+input{
+    font-size: 13px;
+}
+.card-header{
+ font-size: 26px;
+ font-weight: bolder;
+ color: navy;
+ 
+}
+.card-body{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+#button1,#button2{
+    margin: 5px;
+    height: 35px;
+    width: 80px;
+}
+small{
+    font-size: 15px;
+}
+#reg{
+    font-size: 18px;
+}
+.card{
+    margin: 5% 10% 10% 60%;
+    height: 500px;
+    width:500px;
+    border-radius: 3%;
+    background-color: rgba(255, 255, 255, 0.349);
+  }
+  table{
+    height: 400px;
+    /* width: 0px; */
+}
+    #nxt{
+        color: navy;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 15px;
+    }
+#left{
+    color: white;
+} 
+
+.navbar-brand img{
+    height:50px;
+    width:150px;
+    
+}
+.navbar{
+    /* background-color:transparent; */
+    background-color: rgba(255, 255, 255, 0.692) ;
+}
+.navbar-toggler button,.navbar-toggler-icon{
+    background-color: navy;
+}
+.nav-item a{
+    float:right;
+    padding: 5px;
+    margin: 8px;
+    font-size: 20px;
+    color: rgb(26, 26, 168);
+    font-weight: bold;
+} 
+ #button2{
+     background-color: navy;
+     color: oldlace;
+ }
+.main{
+
+background-image: url('https://www.timecamp.com/blog/wp-content/uploads/2017/10/Fotolia_107372724_XS.jpg');
+background-position: center;
+background-size: cover;
+height: 900px;
+width: 100%;
+}

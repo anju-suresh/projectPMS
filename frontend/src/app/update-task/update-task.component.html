@@ -1,0 +1,55 @@
+
+<div class="card">
+
+    <form class="form-container" (ngSubmit)="update()" [formGroup]="taskForm">
+        <div class="card-header">
+            
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class='table table-borderless'>
+                    <br>
+                    <br>
+                        <tr>
+                            <td><label>Task:</label></td>
+                            <td><input type="text" name="p_task" class="form-control" [class.is-invalid]="taskForm.get('task').invalid &&
+                                taskForm.get('task').touched" formControlName='task' [(ngModel)]="taskItem.task" required/>
+                                <div *ngIf=" taskForm.get('task').invalid &&  taskForm.get('task').touched">
+                                    <small *ngIf=" taskForm.get('task').errors?.required" class="text-danger">Name cannot be Empty</small><br>
+                                    <small *ngIf=" taskForm.get('task').errors?.pattern" class="text-danger">Enter only Alphabets</small>
+                                </div>
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <td><label>Teammate</label></td>
+                            <td>
+                            <input type="text" formControlName='teammate' [class.is-invalid]=" taskForm.get('teammate').invalid &&
+                              taskForm.get('teammate').touched" name="p_teammate" formControlName='teammate' name="p_teammate" class="form-control"  [(ngModel)]="taskItem.user" required>
+                                <div *ngIf="taskForm.get('teammate').invalid && taskForm.get('teammate').touched">
+                                    <small *ngIf="taskForm.get('teammate').errors?.required" class="text-danger">user cannot be Empty</small><br>
+                                </div>              
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <td><label>Compltion Date</label></td>
+                            <td><input type="date" [class.is-invalid]="taskForm.get('date').invalid &&
+                              taskForm.get('date').touched" name="p_date" formControlName='date' name="p_date" class="form-control"  [(ngModel)]="taskItem.date" required>
+                                <div *ngIf=" taskForm.get('date').invalid &&  taskForm.get('date').touched">
+                                    <small *ngIf="taskForm.get('date').errors?.required" class="text-danger">Password cannot be Empty</small><br>
+                                    <small *ngIf="taskForm.get('date').errors?.minlength" class="text-danger">Minimum 8 characters</small>
+                                </div>
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <td></td>
+                              <td>
+                                <!-- <input type="button" value="Close" id="button1" class="btn btn-secondary" (click)="Clear()">  -->
+                                <input type="submit" id="button2"  [disabled] = "taskForm.invalid" class="btn btn-info" value="Create"></td>
+                        </tr>
+                  </table>
+              
+            </div>
+        </div>
+    </form>
+
+</div>

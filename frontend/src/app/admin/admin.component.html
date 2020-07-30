@@ -1,0 +1,124 @@
+
+ 
+<div class="links">
+    <a id="right" routerLink="/"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+</div>
+<div class="card">
+    <form class="form" (ngSubmit)="addProject()" [formGroup]="adminForm"> 
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class='table table-borderless'>
+                    <br>
+                        <tr>
+                            <td><label>Project Name</label></td>
+                            <td><input type="text" [(ngModel)]="projectName.project" [(ngModel)]="project.project" [class.is-invalid]="adminForm.get('project').invalid &&
+                                adminForm.get('project').touched" name="p_proj" formControlName='project' class="form-control" required>
+                            <div *ngIf="adminForm.get('project').invalid && adminForm.get('project').touched">
+                                <small *ngIf="adminForm.get('project').errors?.required" class="text-danger">Project cannot be Empty</small><br>
+                                <small *ngIf="adminForm.get('project').errors?.pattern" class="text-danger">Enter a Vaild Project Name</small>
+                            </div>
+                            </td>
+                        </tr><br>
+                        <br>
+                        <tr>
+                            <td><label>Project Description</label></td>
+                            <td><textarea rows="5" cols="5" [(ngModel)]="projectName.description" [class.is-invalid]="adminForm.get('description').invalid &&
+                                adminForm.get('description').touched" name="p_des" formControlName='description' class="form-control" required></textarea>
+                            <div *ngIf="adminForm.get('description').invalid && adminForm.get('description').touched">
+                                <small *ngIf="adminForm.get('description').errors?.required" class="text-danger">Project cannot be Empty</small><br>
+                                <small *ngIf="adminForm.get('description').errors?.pattern" class="text-danger">Enter a Vaild Project Name</small>
+                            </div>
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <td><button type="button" class="btn btn-info" (click)= 'addProjName()'>Add Project</button></td>
+                        </tr><br>
+                        <tr>
+                            <td><label id="team">Add Team Members</label></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Name:</label></td>
+                            <td><input type="text" name="p_name" class="form-control" [(ngModel)]="project.name" [class.is-invalid]=" adminForm.get('name').invalid &&
+                                adminForm.get('name').touched" formControlName='name' required/>
+                                <div *ngIf=" adminForm.get('name').invalid &&  adminForm.get('name').touched">
+                                    <small *ngIf=" adminForm.get('name').errors?.required" class="text-danger">Name cannot be Empty</small><br>
+                                    <small *ngIf=" adminForm.get('name').errors?.pattern" class="text-danger">Enter only Alphabets</small>
+                                </div>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Manager:</label></td>
+                            <td><input type="checkbox" name="p_role" class="form-checkbox" [(ngModel)]="project.role"  value="employee" (change)="onChange($event.target.checked)" formControlName='role' />
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <td><label>User Email:</label></td>
+                            <td><input type="email" formControlName='email' [(ngModel)]="project.email" [class.is-invalid]=" adminForm.get('email').invalid &&
+                                adminForm.get('email').touched" name="p_mail" formControlName='email' name="p_mail" class="form-control" required>
+                                <div *ngIf="adminForm.get('email').invalid &&  adminForm.get('email').touched">
+                                    <small *ngIf="adminForm.get('email').errors?.required" class="text-danger">Email cannot be Empty</small><br>
+                                    <small *ngIf="adminForm.get('email').errors?.pattern" class="text-danger">Enter a Vaild Email</small>
+                                </div>
+                            </td>
+                        
+                        </tr><br>
+                        <!-- <tr>
+                            <td><label>Password</label></td>
+                            <td><input type="password" [(ngModel)]="project.password" [class.is-invalid]="adminForm.get('password').invalid &&
+                                adminForm.get('password').touched" name="p_password" formControlName='password' class="form-control" required>
+                                <div *ngIf="adminForm.get('password').invalid && adminForm.get('password').touched">
+                                    <small *ngIf="adminForm.get('password').errors?.required" class="text-danger">Password cannot be Empty</small><br>
+                                    <small *ngIf="adminForm.get('password').errors?.minlength" class="text-danger">Minimum 8 characters</small>
+                                </div>
+                            </td>
+                        </tr><br> -->
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" id="button2" [disabled] = "adminForm.invalid" class="btn btn-success" value="Add"> 
+                            </td>
+                        </tr>     
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-borderless table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let user of users'>
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.role}}</td>
+                            <!-- <td>
+                              <button (click)="deleteProduct(product._id)" id="delete">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button></td> -->
+                    </tr><br>   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,87 @@
+<div class="main">
+    <header>
+        <nav class="navbar navbar-expand-md  navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand"><img src="https://lh3.googleusercontent.com/proxy/MEcbvT9QCEo-BOPDLRueiYk5e7v62tV5BECnKjVornHHpI6UVFe0lQUDws7WgLInrftNfuXa_6Ctv15u0ns8kRxfuZoz4YFDXg" alt="logo"></a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a id="main" class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="right" class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a id="left" class="nav-link" routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Register</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div class="card">
+        <form (ngSubmit)="registerUser()" class="form" [formGroup]="registerForm">
+            <div class="card-header">
+                {{title}}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class='table table-borderless'>
+                        <br>
+                        <br>
+                            <tr>
+                                <td><label>Name:</label></td>
+                                <td><input type="text" name="p_name" class="form-control" [class.is-invalid]=" registerForm.get('name').invalid &&
+                                    registerForm.get('name').touched" formControlName='name' [(ngModel)]="user.name" required/>
+                                    <div *ngIf=" registerForm.get('name').invalid &&  registerForm.get('name').touched">
+                                        <small *ngIf=" registerForm.get('name').errors?.required" class="text-danger">Name cannot be Empty</small><br>
+                                        <small *ngIf=" registerForm.get('name').errors?.pattern" class="text-danger">Enter only Alphabets</small>
+                                    </div>
+                                </td>
+                            </tr><br>
+                            <tr>
+                                <td><label>Email:</label></td>
+                                <td><input type="email" formControlName='email' [class.is-invalid]=" registerForm.get('email').invalid &&
+                                    registerForm.get('email').touched" name="p_mail" formControlName='email' name="p_mail" class="form-control"  [(ngModel)]="user.email" required>
+                                    <div *ngIf="registerForm.get('email').invalid &&  registerForm.get('email').touched">
+                                        <small *ngIf="registerForm.get('email').errors?.required" class="text-danger">Email cannot be Empty</small><br>
+                                        <small *ngIf="registerForm.get('email').errors?.pattern" class="text-danger">Enter a Vaild Email</small>
+                                    </div>
+                                </td>
+                            
+                            </tr><br>
+                            <tr>
+                                <td><label>Password</label></td>
+                                <td><input type="password" [class.is-invalid]="registerForm.get('password').invalid &&
+                                    registerForm.get('password').touched" name="p_password" formControlName='password' name="p_password" class="form-control"  [(ngModel)]="user.password" required>
+                                    <div *ngIf=" registerForm.get('password').invalid &&  registerForm.get('password').touched">
+                                        <small *ngIf="registerForm.get('password').errors?.required" class="text-danger">Password cannot be Empty</small><br>
+                                        <small *ngIf="registerForm.get('password').errors?.minlength" class="text-danger">Minimum 8 characters</small>
+                                    </div>
+                                </td>
+                            </tr><br>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" id="button2"  [disabled] = "registerForm.invalid"  value="Register"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td id="reg">Already Registered? <br><a id="nxt" routerLink="/login">Log In </a></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    
+</div>

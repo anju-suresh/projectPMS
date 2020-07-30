@@ -1,0 +1,64 @@
+.navbar-brand img{
+    height:50px;
+    width:150px;
+    
+}
+.navbar{
+    /* background-color:transparent; */
+    background-color: rgba(255, 255, 255, 0.562) ;
+}
+.navbar-toggler button,.navbar-toggler-icon{
+    background-color: navy;
+}
+.nav-item a{
+    float:right;
+    padding: 5px;
+    margin: 8px;
+    font-size: 20px;
+    color: rgb(26, 26, 168);
+    font-weight: bold;
+} 
+#main{
+    margin-left: 80%;
+    color: white;
+}
+.main{
+
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSgAysLujuKH8HVoI5sKUguNlrcYGIgRp4Tuw&usqp=CAU');
+background-position: center;
+background-size: cover;
+height: 900px;
+width: 100%;
+}
+.heading{
+    color: white;
+    /* background: -webkit-linear-gradient(white, rgb(18, 10, 134)); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+    font-size: 72px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 40px;
+}
+#p1{
+    margin:10% 45% 2% 5%;
+    color: white;
+    text-align: justify;
+    font-size: x-large;
+}
+#p2 li{
+    margin:0% 15% 0% 2%;
+    color: white;
+    text-align: justify;
+    font-size: x-large;
+    padding: 10px;
+   
+}
+#p3{
+    margin:0% 25% 0% 35%;
+    color: white;
+    text-align: justify;
+    font-size: xx-large;
+    font-weight: bold;
+}

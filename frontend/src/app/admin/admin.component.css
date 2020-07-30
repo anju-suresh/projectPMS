@@ -1,0 +1,92 @@
+label{
+    font-size: 20px;
+    text-align: center;
+}
+input{
+    font-size: 13px;
+}
+.card-header{
+ font-size: 20px;
+ font-weight: bolder;
+ background-color: rgb(241, 223, 241);
+ color: darkmagenta;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card-body{
+    margin-left:50px;
+    margin-right:50px;
+    
+}
+
+#button2{
+    margin: 5px;
+    height: 35px;
+    width: 80px;
+}
+small{
+    font-size: 15px;
+}
+.card{
+  margin: 10% 30% 10% 30%;
+  height: auto;
+  width:600px;
+}
+#nxt{
+    color: navy;
+    text-decoration: none;
+    font-size: 15px;
+}
+#reg{
+    font-size: 15px;
+}
+table{
+    height: auto;
+    /* width: 0px; */
+}
+h1{
+    background:transparent;
+    height: 120px;
+    margin-top: 60px;
+    font-size: 40px;
+    font-style: oblique;
+    font-weight: bolder;
+    z-index: -1;
+    color: white;
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+a{
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bold;
+    color: rgb(223, 215, 215);
+}
+.header{
+    background: linear-gradient(to left, #16a0ce 0%, #9e0c55 100%);
+    /* background-color: #9e0c55; */
+    border: none;
+    padding: 0%;
+    margin: 0px;
+}
+#right{
+    margin-left: 80%;
+    color: white;
+}
+.links{
+    
+    padding: 10px;
+    height: 50px;
+    background:linear-gradient(to left, #61bfdf 0%, #cf4c8e 100%)
+    /* background-color: #b30b5f; */
+}
+#team{
+    font-size: 20px;
+    padding-left: 0px;
+    color: #9e0c55;
+}
+#p_role{
+    size: 60px;
+    height: 20px;
+    width: 20px;
+}
