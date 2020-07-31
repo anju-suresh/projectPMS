@@ -45,5 +45,7 @@ export class UpdateTaskComponent implements OnInit {
       this.router.navigate(['/manager']);
     }
   }
-
+  Clear(){
+    this.router.navigate(['/manager/show']);
+  }
 }

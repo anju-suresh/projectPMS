@@ -51,8 +51,9 @@
                             <tr>
                                 <td></td>
                                   <td>
+                                    <input type="submit" id="button2"  [disabled] = "taskForm.invalid" class="btn btn-primary" value="Create">
                                     <input type="button" value="Close" id="button1" class="btn btn-secondary" (click)="Clear()"> 
-                                    <input type="submit" id="button2"  [disabled] = "taskForm.invalid" class="btn btn-info" value="Create"></td>
+                                </td>
                             </tr>
                       </table>
                   

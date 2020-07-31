@@ -13,6 +13,8 @@ import { userModel } from '../admin/admin.module';
 })
 export class AdminComponent implements OnInit {
   title:string="Add Avialble Projects";
+  titleHead= "Project Management System";
+  tabletitle="Employees List";
   constructor(private router: Router, private fb: FormBuilder, private mainService:MainService) { }
   project= new adminModel(null,null,"employee",null);
   users=new userModel(null,null,null);

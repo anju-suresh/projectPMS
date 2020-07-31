@@ -8,7 +8,7 @@ userRouter.get('/getProgress/:id',(req,res)=>{
     res.header('Access-Control-Allow-Origin','*')
     res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
     id=req.params.id;
-    progressData.find({project : id, status: "accept"})
+    progressData.find({project : id, status: "Accepted"})
         .then((progress)=>{
             res.json(progress);
             console.log(progress + "progress data");
@@ -37,7 +37,7 @@ userRouter.post('/addprogress',(req,res)=>{
     users.save();
     taskData.deleteOne({_id:id})
     .then((res)=>{
-        console.log(deleted);
+        console.log("deleted");
     })
     })
    
@@ -48,26 +48,28 @@ userRouter.post('/addCompleted',(req,res)=>{
     res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
     id=req.body.id;
     console.log(id);
+    console.log( req.body.status +"completed Status");
+    var stat=req.body.status;
     progressData.findOne({_id : id})
         .then((progress)=>{
             // res.json(progress);
             // progreses=JSON.stringify(progress);
             console.log(progress + "completed progress data");
-            console.log(progress.project);
+           
     var user = {
         project : progress.project,
         taskid : progress.taskid,
         task : progress.task,
         user : progress.user,
         date: progress.date,
-        completed: req.body.completed.completed
+        completed: stat
     }
-    console.log("database reached")
+    console.log(user+"database reached")
     var users = new completedData(user);
     users.save();
     progressData.deleteOne({_id:id})
     .then((res)=>{
-        console.log(deleted);
+        console.log("deleted");
     })
     })
 })
@@ -76,7 +78,7 @@ userRouter.get('/getRejected/:id',(req,res)=>{
     res.header('Access-Control-Allow-Origin','*')
     res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
     id=req.params.id;
-    progressData.find({project : id, status: "reject"})
+    progressData.find({project : id, status: "Rejected"})
         .then((reject)=>{
             res.json(reject);
             console.log(reject + "reject data");

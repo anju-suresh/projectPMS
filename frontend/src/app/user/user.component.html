@@ -1,15 +1,40 @@
 <div class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-md  navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQj4GVqd4re83RKvmp-L_gnnqUOywGGKqXRrQ&usqp=CAU" alt="logo"></a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a id="right" routerLink="/"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div class="heading">
+        {{titleHead}}
+    </div>
+   <h1 id="head">{{title}}</h1> 
+   <h3 id="name">Welcome {{name}}</h3>
     <div class="row">
-        <div class="col-sm-3" >
+        <div class="col-sm-3 Proposed" >
             <h2>Proposed</h2>
-            <div class="card" *ngFor='let task of tasks'>
+            <div class="card " *ngFor='let task of tasks'>
                 <div class="card-header" >
                     <h1>{{task.taskid}}</h1>
                 </div>
                 <div class="card-body">
                     <label>{{task.task}}</label><br>
-                    <label>{{task.user}}</label><br>
-                    <label>{{task.date}}</label><br>
+                    <label class="use"> {{task.user}}</label><br>
+                    <label> {{task.date}}</label><br>
                     <label>Accept:</label>
                     <input type="checkbox" name="p_accept" class="form-checkbox"  value="accept" (change)="onChange($event.target.checked,task._id)" /> 
                     <label>Reject:</label>
@@ -17,47 +42,47 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <h2>In Progress</h2>
+        <div class="col-sm-3 prog">
+            <h2 id="prog">In Progress</h2>
             <div class="card" *ngFor='let progres of progreses'>
-                <div class="card-header">
+                <div class="card-header" id="prog">
                     <h1>{{progres.taskid}}</h1>
                 </div>
                 <div class="card-body">
                     <label>{{progres.task}}</label><br>
-                    <label>{{progres.user}}</label><br>
+                    <label class="use">{{progres.user}}</label><br>
                     <label>{{progres.date}}</label><br>
                     <label>{{progres.status}}</label><br>
                     <label>Completed:</label>
                     <input type="checkbox" name="p_completed" class="form-checkbox"  value="completed" (change)="onCompleted($event.target.checked,progres._id)" /> 
-                </div>
+                </div>completed
             </div>
         </div>
-        <div class="col-sm-3">
-            <h2>Completed</h2>
+        <div class="col-sm-3 ">
+            <h2 id="com">Completed</h2>
             <div class="card" *ngFor='let complete of completed'>
-                <div class="card-header">
+                <div class="card-header" id="com">
                     <h1>{{complete.taskid}}</h1>
                 </div>
                 <div class="card-body">
                     <label>{{complete.task}}</label><br>
-                    <label>{{complete.user}}</label><br>
+                    <label class="use">{{complete.user}}</label><br>
                     <label>{{complete.date}}</label><br>
-                    <label>{{complete.status}}</label><br>
+                    <label>{{complete.completed}}</label><br>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <h2>Rejected</h2>
+        <div class="col-sm-3 rejected">
+            <h2 id="rej">Rejected</h2>
             <div class="card" *ngFor='let reject of rejected' >
-                <div class="card-header">
+                <div class="card-header" id="rej">
                     <h1>{{reject.taskid}}</h1>
                 </div>
                 <div class="card-body">
                     <label>{{reject.task}}</label><br>
-                    <label>{{reject.user}}</label><br>
+                    <label class="use">{{reject.user}}</label><br>
                     <label>{{reject.date}}</label><br>
-                    <label>{{reject.completed}}</label><br>
+                    <label>{{reject.status}}</label><br>
                 </div>
             </div>
         </div>

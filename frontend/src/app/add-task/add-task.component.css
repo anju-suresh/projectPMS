@@ -1,0 +1,21 @@
+.card{
+    margin: 20px 30% 0% 30%;
+    height: 450px;
+    width: 750px;
+    border-radius: 3px;
+    background-color: rgb(245, 241, 235);
+}
+.card-header{
+    font-size: 30px;
+    color: rgb(12, 93, 173);
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(255, 253, 253);
+}
+.card-body td{
+    font-size: 20px;
+}
+#button1,#button2{
+    margin: 3px;
+    font-size: 16px;
+}

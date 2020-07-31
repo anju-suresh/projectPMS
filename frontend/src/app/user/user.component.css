@@ -1,0 +1,99 @@
+h2{
+font-size: 30px;
+ font-weight: bold;
+ margin-top: 10%;
+ text-align: center;
+}
+#prog{
+    color: rgb(255, 255, 14);
+   
+}
+#com{
+    color: rgb(21, 223, 21);
+}
+#rej{
+    color: red;
+}
+.container-fluid{
+    background-image: url('https://www.awsforbusiness.com/wp-content/uploads/2017/04/Business-Productivity1-final.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+   
+}
+.Proposed .card{
+    border-radius: 2%;
+    box-shadow: 0 1px 2px 0 rgba(252, 249, 249, 0.404), 0 6px 20px 0 rgba(255, 255, 255, 0.205);
+}
+.completed .card{
+    border-radius: 2%;
+    box-shadow: 0 1px 2px 0 rgba(12, 105, 17, 0.932), 0 6px 20px 0 rgb(78, 228, 85);
+}
+.prog .card{
+    border-radius: 2%;
+    box-shadow: 0 1px 2px 0 rgba(247, 244, 54, 0.945), 0 6px 20px 0 rgb(236, 232, 9);
+}
+.rejected .card{
+    border-radius: 2%;
+    box-shadow: 0 1px 2px 0 rgba(231, 20, 20, 0.911), 0 6px 20px 0 rgba(209, 16, 16, 0.993);
+}
+label{
+    font-size: 18px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.card{
+    width:330px;
+    text-align: center;
+    margin: 10%;
+    height: 250px;
+}
+.use{
+    color: rgb(70, 70, 180);
+}
+.card-header{
+    background-color: rgba(169, 169, 169, 0.027);
+}
+#head{
+    color: rgb(214, 9, 111);
+    text-shadow: 2px 2px #f7f4f4;
+    font-size: 80px;
+    text-align: center;
+}
+#name{
+   
+    color: rgb(155, 247, 9);
+    text-shadow: 1px 1px #f3f0f0;
+    font-size: 40px;
+    text-align: left;
+}
+.navbar-brand img{
+    height:50px;
+    width:150px;
+    
+}
+.navbar{
+    /* background-color:transparent; */
+    background-color: rgba(255, 255, 255, 0.692) ;
+}
+.navbar-toggler button,.navbar-toggler-icon{
+    background-color: navy;
+}
+.nav-item a{
+    float:right;
+    padding: 5px;
+    margin: 8px;
+    font-size: 20px;
+    color: rgb(26, 26, 168);
+    font-weight: bold;
+} 
+.heading{
+    color: rgb(14, 4, 68);
+    text-shadow: 1px 1px #f3f0f0;
+    font-size: 72px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 40px;
+}

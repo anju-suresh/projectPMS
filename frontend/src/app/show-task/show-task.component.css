@@ -1,0 +1,67 @@
+h2{
+    font-size: 30px;
+     font-weight: bold;
+     margin-top: 10%;
+     text-align: center;
+    }
+    #prog{
+        color: rgb(255, 255, 14);
+       
+    }
+    #com{
+        color: rgb(21, 223, 21);
+    }
+    #rej{
+        color: red;
+    }
+    .container-fluid{
+        background-color: transparent;
+        
+       
+    }
+    .Proposed .card{
+        border-radius: 2%;
+        box-shadow: 0 1px 2px 0 rgba(252, 249, 249, 0.404), 0 6px 20px 0 rgba(255, 255, 255, 0.205);
+    }
+    .completed .card{
+        border-radius: 2%;
+        box-shadow: 0 1px 2px 0 rgba(12, 105, 17, 0.932), 0 6px 20px 0 rgb(78, 228, 85);
+    }
+    .prog .card{
+        border-radius: 2%;
+        box-shadow: 0 1px 2px 0 rgba(247, 244, 54, 0.945), 0 6px 20px 0 rgb(236, 232, 9);
+    }
+    .rejected .card{
+        border-radius: 2%;
+        box-shadow: 0 1px 2px 0 rgba(231, 20, 20, 0.911), 0 6px 20px 0 rgba(209, 16, 16, 0.993);
+    }
+    label{
+        font-size: 18px;
+        margin: 5px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .card{
+        width:330px;
+        text-align: center;
+        margin: 10%;
+        height: 250px;
+    }
+    .use{
+        color: rgb(70, 70, 180);
+    }
+    .card-header{
+        background-color: rgba(169, 169, 169, 0.027);
+    }
+    #edit,#delete{
+        margin: 1px;
+        font-size: 15px;
+    }
+
+    .update{
+        position: relative;
+    }
+   
+    
+   
+   

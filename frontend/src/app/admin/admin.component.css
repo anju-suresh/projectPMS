@@ -8,8 +8,9 @@ input{
 .card-header{
  font-size: 20px;
  font-weight: bolder;
- background-color: rgb(241, 223, 241);
- color: darkmagenta;
+ text-align: center;
+ background-color: rgb(255, 255, 255);
+ color: rgb(17, 8, 141);
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .card-body{
@@ -19,15 +20,16 @@ input{
 }
 
 #button2{
-    margin: 5px;
+    margin-left: 15%;
     height: 35px;
     width: 80px;
+    text-align: center;
 }
 small{
     font-size: 15px;
 }
-.card{
-  margin: 10% 30% 10% 30%;
+.addfrom{
+  margin: 3% 30% 5% 30%;
   height: auto;
   width:600px;
 }
@@ -43,50 +45,58 @@ table{
     height: auto;
     /* width: 0px; */
 }
-h1{
-    background:transparent;
-    height: 120px;
-    margin-top: 60px;
-    font-size: 40px;
-    font-style: oblique;
-    font-weight: bolder;
-    z-index: -1;
-    color: white;
-    text-align: center;
-    border: none;
-    width: 100%;
-}
-a{
-    font-size: 20px;
-    padding: 20px;
-    font-weight: bold;
-    color: rgb(223, 215, 215);
-}
-.header{
-    background: linear-gradient(to left, #16a0ce 0%, #9e0c55 100%);
-    /* background-color: #9e0c55; */
-    border: none;
-    padding: 0%;
-    margin: 0px;
-}
-#right{
-    margin-left: 80%;
-    color: white;
-}
-.links{
-    
-    padding: 10px;
-    height: 50px;
-    background:linear-gradient(to left, #61bfdf 0%, #cf4c8e 100%)
-    /* background-color: #b30b5f; */
-}
-#team{
-    font-size: 20px;
-    padding-left: 0px;
-    color: #9e0c55;
-}
 #p_role{
     size: 60px;
     height: 20px;
     width: 20px;
+}
+.contain{
+    background-image: url('https://www.awsforbusiness.com/wp-content/uploads/2017/04/Business-Productivity1-final.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+   
+}
+#imag{
+    height:50px;
+    width:150px;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.navbar{
+    /* background-color:transparent; */
+    background-color: rgba(255, 255, 255, 0.692) ;
+}
+.navbar-toggler button,.navbar-toggler-icon{
+    background-color: navy;
+}
+.nav-item a{
+    float:right;
+    padding: 5px;
+    margin: 8px;
+    font-size: 20px;
+    color: rgb(26, 26, 168);
+    font-weight: bold;
+} 
+.heading{
+    color: rgb(14, 4, 68);
+    text-shadow: 1px 1px #f3f0f0;
+    font-size: 72px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 30px;
+}
+.disply{
+    margin: 0% 10% 0% 10%;
+}
+.disply td{
+    font-size: 20px;
+    color: black;
+}
+.disply th{
+    font-size: 25px;
 }

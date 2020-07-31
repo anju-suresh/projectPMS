@@ -16,6 +16,7 @@ export class ManagerComponent implements OnInit, OnChanges {
  
   title:string= " ";
   name:string="";
+  titleHead= "Project Management System";
   // length:string;
   
   constructor(private router: Router, private fb: FormBuilder, private mainService:MainService,public navCtrl: NgxNavigationWithDataComponent) {

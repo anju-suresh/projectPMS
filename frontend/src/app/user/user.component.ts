@@ -15,7 +15,8 @@ import {progressModel,completedModel} from './user.module';
 })
 export class UserComponent implements OnInit {
   title:string= " ";
-  
+  name:string="";
+  titleHead= "Project Management System"
   progress =new statusModel(null,null,null,null,null,null);
   completed =new completedModel(null,null,null,null,null,null); 
   progreses=new progressModel(null,null,null,null,null,null);
@@ -23,6 +24,7 @@ export class UserComponent implements OnInit {
   tasks= new viewModel(null,null,null,null);
   constructor(private router: Router, private fb: FormBuilder, private mainService:MainService,public navCtrl: NgxNavigationWithDataComponent) { 
     this.title= this.navCtrl.get('project').project;
+    this.name=this.navCtrl.get('project').name;
   }
 
   ngOnInit(): void {
@@ -52,7 +54,7 @@ export class UserComponent implements OnInit {
   }
   onChange(isChecked: boolean,id) {
     if (isChecked) {
-      this.progress.status="accept";
+      this.progress.status="Accepted";
     } 
     this.mainService.addProgress(id,this.progress)
     console.log(this.progress)
@@ -61,11 +63,12 @@ export class UserComponent implements OnInit {
       this.progreses=JSON.parse(JSON.stringify(prog));
       console.log(prog +"progress");
     });
+    this.ngOnInit();
     alert('Success');
   }
   onReject(isChecked: boolean,id) {
     if (isChecked) {
-      this.progress.status="reject";
+      this.progress.status="Rejected";
     } 
     this.mainService.addProgress(id,this.progress)
     console.log(this.progress)
@@ -74,7 +77,7 @@ export class UserComponent implements OnInit {
       this.rejected=JSON.parse(JSON.stringify(reject));
       console.log(reject +"progress");
     });
-   
+    this.ngOnInit();
     alert('Success');
   }
   onCompleted(isChecked: boolean,id) {
@@ -82,13 +85,14 @@ export class UserComponent implements OnInit {
     if (isChecked) {
       this.completed.completed="Completed";
     } 
-    this.mainService.addCompleted(id,this.completed)
+    this.mainService.addCompleted(id,this.completed.completed)
     console.log(this.completed)
     console.log("called");
     this.mainService.getCompleted(this.title).subscribe((complete)=>{
       this.completed=JSON.parse(JSON.stringify(complete));
       console.log(complete +"progress");
     });
+    this.ngOnInit();
     alert('Success');
   }
 }

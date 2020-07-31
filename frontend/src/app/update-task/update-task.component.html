@@ -31,7 +31,7 @@
                             </td>
                         </tr><br>
                         <tr>
-                            <td><label>Compltion Date</label></td>
+                            <td><label>Created Date</label></td>
                             <td><input type="date" [class.is-invalid]="taskForm.get('date').invalid &&
                               taskForm.get('date').touched" name="p_date" formControlName='date' name="p_date" class="form-control"  [(ngModel)]="taskItem.date" required>
                                 <div *ngIf=" taskForm.get('date').invalid &&  taskForm.get('date').touched">
@@ -43,8 +43,8 @@
                         <tr>
                             <td></td>
                               <td>
-                                <!-- <input type="button" value="Close" id="button1" class="btn btn-secondary" (click)="Clear()">  -->
-                                <input type="submit" id="button2"  [disabled] = "taskForm.invalid" class="btn btn-info" value="Create"></td>
+                                <input type="button" value="Close" id="button1" class="btn btn-secondary" (click)="Clear()"> 
+                                <input type="submit" id="button2"  [disabled] = "taskForm.invalid" class="btn btn-info" value="Update"></td>
                         </tr>
                   </table>
               

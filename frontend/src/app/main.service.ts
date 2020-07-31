@@ -44,7 +44,7 @@ export class MainService {
   addCompleted(id,item){
     console.log(item);
     console.log(id);
-    return this.http.post("http://localhost:3000/user/addCompleted",{"id":id,"completed":item})
+    return this.http.post("http://localhost:3000/user/addCompleted",{"id":id,"status":item})
     .subscribe(data =>{console.log(data)})
   }
   getRejected(item){
