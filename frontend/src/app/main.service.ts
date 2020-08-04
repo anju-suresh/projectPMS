@@ -68,4 +68,9 @@ updateProduct(pid){
   return this.http.get("http://localhost:3000/admin/update/"+pid)
  
 }
+deleterejected(pid){
+  console.log(pid)
+  return this.http.get("http://localhost:3000/admin/deleterejected/"+pid)
+
+}
 }

@@ -64,7 +64,7 @@ export class UserComponent implements OnInit {
       console.log(prog +"progress");
     });
     this.ngOnInit();
-    alert('Success');
+    alert('Task Accepted');
   }
   onReject(isChecked: boolean,id) {
     if (isChecked) {
@@ -78,7 +78,7 @@ export class UserComponent implements OnInit {
       console.log(reject +"progress");
     });
     this.ngOnInit();
-    alert('Success');
+    alert('Task Rejected');
   }
   onCompleted(isChecked: boolean,id) {
     console.log(id);
@@ -93,6 +93,6 @@ export class UserComponent implements OnInit {
       console.log(complete +"progress");
     });
     this.ngOnInit();
-    alert('Success');
+    alert('Task Completed');
   }
 }

@@ -18,8 +18,8 @@ userRouter.get('/getProgress/:id',(req,res)=>{
 userRouter.post('/addprogress',(req,res)=>{
     res.header('Access-Control-Allow-Origin','*')
     res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    id=req.body.id;
-    taskData.findOne({_id : id})
+    pid=req.body.id;
+    taskData.findOne({_id : pid})
     .then((status)=>{
         // res.json(progress);
         // progreses=JSON.stringify(progress);
@@ -35,7 +35,8 @@ userRouter.post('/addprogress',(req,res)=>{
     console.log("database reached")
     var users = new progressData(user);
     users.save();
-    taskData.deleteOne({_id:id})
+    console.log(pid);
+    taskData.deleteOne({_id: pid})
     .then((res)=>{
         console.log("deleted");
     })

@@ -62,6 +62,9 @@
                     <label class="use">{{reject.user}}</label><br>
                     <label>{{reject.date}}</label><br>
                     <label>{{reject.status}}</label><br>
+                    <button (click)="deleterejected(reject._id)" id="delete">
+                      <span class="glyphicon glyphicon-trash"></span>
+                  </button>
                 </div>
             </div>
         </div>

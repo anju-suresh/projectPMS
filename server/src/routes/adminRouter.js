@@ -108,6 +108,25 @@ adminRouter.get("/delete/:id",(req,res)=>{
                 });
             });
     });
+    adminRouter.get("/deleterejected/:id",(req,res)=>{
+        res.header('Access-Control-Allow-Origin','*')
+        res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+                id=req.params.id;
+                console.log(id);
+                progressData.findOneAndDelete({_id : id}, (error, result) =>{
+                    if (error) {
+                        throw error;
+                    } else {
+                        res.status(200);
+                        console.log("deleted")
+                    }
+                }).then(()=>{
+                    progressData.find({status: "Rejected"})
+                    .then((tasks)=>{
+                       res.send(tasks);
+                    });
+                });
+        });
 
 
     adminRouter.get("/update/:id",(req,res)=>{

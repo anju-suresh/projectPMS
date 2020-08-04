@@ -53,5 +53,16 @@ rejected=new progressModel(null,null,null,null,null,null);
     }
     
   }
+  deleterejected(event){
+    if (window.confirm("Do you want to delete?")){
+    this.mainService.deleterejected(event).subscribe((data) => {
+    this.tasks = JSON.parse(JSON.stringify(data));})
+    this.ngOnInit();
+    alert('Deleted');
+    }else{
+      this.router.navigate(['/manager/show']);
+    }
+    
+  }
  
 }
