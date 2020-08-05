@@ -31,6 +31,9 @@ export class MainService {
   getTasks(project){
     return this.http.get("http://localhost:3000/admin/gettasks/" + project);
   }
+  getUserTasks(project,user){
+    return this.http.get("http://localhost:3000/user/getusertasks/" + project+ "/" +user);
+  }
   addProgress(id,item){
     console.log(item);
     return this.http.post("http://localhost:3000/user/addprogress",{"id":id,"progress":item})
@@ -39,6 +42,9 @@ export class MainService {
 
   getProgress(item){
     return this.http.get("http://localhost:3000/user/getProgress/" + item);
+  }
+  getuserProgress(item,name){
+    return this.http.get("http://localhost:3000/user/getuserProgress/" + item + "/" +name);
   }
 
   addCompleted(id,item){
@@ -52,6 +58,12 @@ export class MainService {
   }
   getCompleted(item){
     return this.http.get("http://localhost:3000/user/getCompleted/" + item);
+  }
+  getuserRejected(item,name){
+    return this.http.get("http://localhost:3000/user/getuserRejected/" + item +"/"+ name);
+  }
+  getuserCompleted(item,name){
+    return this.http.get("http://localhost:3000/user/getuserCompleted/" + item +"/"+ name);
   }
   deleteProduct(pid){
     console.log(pid)

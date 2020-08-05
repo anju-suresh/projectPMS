@@ -97,6 +97,52 @@ userRouter.get('/getCompleted/:id',(req,res)=>{
         })
         
 });
+userRouter.get('/getusertasks/:id/:user',(req,res)=>{
+    res.header('Access-Control-Allow-Origin','*')
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    id=req.params.id;
+    user=req.params.user;
+    taskData.find({project : id,user : user})
+        .then((users)=>{
+            res.json(users);
+        });
+});
+userRouter.get('/getuserRejected/:id/:name',(req,res)=>{
+    res.header('Access-Control-Allow-Origin','*')
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    id=req.params.id;
+    name= req.params.name;
+    progressData.find({project : id,user : name, status: "Rejected"})
+        .then((reject)=>{
+            res.json(reject);
+            console.log(reject + "reject data");
+        })
+        
+});
+userRouter.get('/getuserCompleted/:id/:name',(req,res)=>{
+    res.header('Access-Control-Allow-Origin','*')
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    id=req.params.id;
+    name =req.params.name;
+    completedData.find({project : id,user : name })
+        .then((complete)=>{
+            res.json(complete);
+            console.log(complete + "complete data");
+        })
+        
+});
+userRouter.get('/getuserProgress/:id/:name',(req,res)=>{
+    res.header('Access-Control-Allow-Origin','*')
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    id=req.params.id;
+    name =req.params.name;
+    progressData.find({project : id, user : name, status: "Accepted"})
+        .then((progress)=>{
+            res.json(progress);
+            console.log(progress + "progress data");
+        })
+        
+});
 module.exports=userRouter;
 
 

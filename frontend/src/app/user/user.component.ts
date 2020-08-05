@@ -29,22 +29,22 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.mainService.getTasks(this.title).subscribe((date)=>{
+    this.mainService.getUserTasks(this.title,this.name).subscribe((date)=>{
       this.tasks=JSON.parse(JSON.stringify(date));
       // length = this.tasks.task.length;
       // console.log(length);
       console.log(this.tasks +'tasks');
      
     });
-    this.mainService.getProgress(this.title).subscribe((prog)=>{
+    this.mainService.getuserProgress(this.title,this.name).subscribe((prog)=>{
       this.progreses=JSON.parse(JSON.stringify(prog));
       console.log(prog +"progress");
     });
-    this.mainService.getCompleted(this.title).subscribe((complete)=>{
+    this.mainService.getuserCompleted(this.title,this.name).subscribe((complete)=>{
       this.completed=JSON.parse(JSON.stringify(complete));
       console.log(complete +"progress");
     });
-    this.mainService.getRejected(this.title).subscribe((reject)=>{
+    this.mainService.getuserRejected(this.title,this.name).subscribe((reject)=>{
       this.rejected=JSON.parse(JSON.stringify(reject));
       console.log(reject +"progress");
     });
@@ -59,7 +59,7 @@ export class UserComponent implements OnInit {
     this.mainService.addProgress(id,this.progress)
     console.log(this.progress)
     console.log("called");
-    this.mainService.getProgress(this.title).subscribe((prog)=>{
+    this.mainService.getuserProgress(this.title,this.name).subscribe((prog)=>{
       this.progreses=JSON.parse(JSON.stringify(prog));
       console.log(prog +"progress");
     });
@@ -73,7 +73,7 @@ export class UserComponent implements OnInit {
     this.mainService.addProgress(id,this.progress)
     console.log(this.progress)
     console.log("called");
-    this.mainService.getRejected(this.title).subscribe((reject)=>{
+    this.mainService.getuserRejected(this.title,this.name).subscribe((reject)=>{
       this.rejected=JSON.parse(JSON.stringify(reject));
       console.log(reject +"progress");
     });
@@ -88,7 +88,7 @@ export class UserComponent implements OnInit {
     this.mainService.addCompleted(id,this.completed.completed)
     console.log(this.completed)
     console.log("called");
-    this.mainService.getCompleted(this.title).subscribe((complete)=>{
+    this.mainService.getuserCompleted(this.title,this.name).subscribe((complete)=>{
       this.completed=JSON.parse(JSON.stringify(complete));
       console.log(complete +"progress");
     });
